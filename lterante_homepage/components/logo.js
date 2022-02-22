@@ -4,27 +4,29 @@ import { Text, useColorModeValue } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 const LogoBox = styled.span`
-    font-weight: bold;
-    font-size: 18px;
-    display: inline-flex;
-    align-items: center;
-    height: 30px;
-    line-height: 20px;
-    padding: 10px;
-
-    &:hover img {
-        transform: rotate(20deg);
-    }
+  font-weight: bold;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  line-height: 20px;
+  padding: 10px;
+  img {
+    transition: 200ms ease;
+  }
+  &:hover img {
+    transform: rotate(30deg);
+  }
 `
 
 const Logo = () => {
-    const footPrintImg = `/images/footprint${useColorModeValue('', '-dark')}.png`
+    const deadpool = `/images/deadpool${useColorModeValue('', '-dark')}.png`
 
     return (
-        <Link href="/">
+        <Link href="/" scroll={false}>
             <a>
-                <Logobox>
-                    <Image src={footPrintImg} width={20} height={20}>
+                <LogoBox>
+                    <Image src={deadpool} width={20} height={20}/>
                         <Text 
                             color={useColorModeValue('gray.800', 'whiteAlpha.900')}
                             fontFamily='M PLUS Rounded 1c'
@@ -33,8 +35,7 @@ const Logo = () => {
                         >
                             Levi Terante
                         </Text>
-                    </Image>
-                </Logobox>
+                </LogoBox>
             </a>
         </Link>
     )
