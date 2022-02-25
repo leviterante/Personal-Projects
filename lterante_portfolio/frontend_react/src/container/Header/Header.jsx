@@ -1,8 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
+import { AppWrap } from '../../wrapper'
 import { images } from '../../constants'
-
 import './Header.scss'
 
 const scaleVariants = {
@@ -18,7 +18,7 @@ const scaleVariants = {
 
 const Header = () => {
   return (
-    <div id="home" className="app__header app__flex">
+    <div className="app__header app__flex">
       <motion.div
         whileInView={{x: [-100, 0], opacity: [0, 1]}}
         transtion={{ duration: 0.5 }}
@@ -28,7 +28,7 @@ const Header = () => {
           <div className="badge-cmp app__flex">
             <div style={{marginLeft: 20}}>
               <span>👋</span>
-              <p className="p-text">Hello, I am</p>
+              <p className="p-text">Hello, my name is</p>
               <h1 className="head-text">Levi</h1>
             </div>
           </div>
@@ -43,7 +43,7 @@ const Header = () => {
         transtion={{ duration: 0.5, delayChildren: 0.5}}
         className="app__header-img"
       >
-        <img src={images.logo} alt="profile_bg" />
+        <img src={images.deadpool} alt="profile_bg" />
         <motion.img
           className="overlay_circle"
           whileInView={{scale: [0, 1]}}
@@ -68,4 +68,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default AppWrap(Header, 'home')
